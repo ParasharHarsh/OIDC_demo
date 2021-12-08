@@ -231,7 +231,8 @@ $json = json_decode($result2, true);*/
 					headers: new Headers({'Authorization': 'Basic '+btoa(clientID+":"+clientSecret)})
 				  });
 				  const json = await response.json();
-    console.log(json);
+    	console.log(json);
+	document.getElementById("qrystrJWT4").value = json.access_token;
 	var nextUrl = "https://fidm.us1.gigya.com/oidc/op/v1.0/3_PLBGGaOwZ-Dhle77IAmOg_a11GS9ueMpJu2cKvxkwHk7o6UYm-a42oRdcY3P5Lnh/userinfo";
 	var bearAccessToken="Bearer " + json.access_token;
 				const accessResponse = await fetch(nextUrl, {
